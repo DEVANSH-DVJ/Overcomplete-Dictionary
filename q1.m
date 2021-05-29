@@ -30,8 +30,8 @@ f = f1 + f2;
 for i=1:100
     sigma = 0.001 * i * abs(mean(f));
     f = f + randn(256,1)*sigma;
-    
-    x = omp_error(A, f, sigma);
+
+    x = omp(A, f, 9*256*sigma^2);
     coeff1_recon = x(1:256);
     coeff2_recon = x(257:512);
 
@@ -83,7 +83,7 @@ for i=1:100
     sigma = 0.01 * abs(mean(f));
     f = f + randn(256,1)*sigma;
 
-    x = omp_error(A, f, sigma);
+    x = omp(A, f, 9*256*sigma^2);
     coeff1_recon = x(1:256);
     coeff2_recon = x(257:512);
 
@@ -135,7 +135,7 @@ for k=1:100
     sigma = 0.01 * abs(mean(f));
     f = f + randn(256,1)*sigma;
 
-    x = omp_error(A, f, sigma);
+    x = omp(A, f, 9*256*sigma^2);
     coeff1_recon = x(1:256);
     coeff2_recon = x(257:512);
 
