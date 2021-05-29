@@ -42,6 +42,8 @@ We run three types of experiments for 256-dimensional signals:
 2. Varying **s** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **k** fixed as 1.
 3. Varying **k** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **s** fixed as 25.
 
+We evaluated the reconstructed signal by computing RMSE (Relative Mean Square Error) w.r.t. original signal.
+
 ### Varying sigma
 
 <img src="plots/error1_sigma.jpg" width="400" height="400"> <img src="plots/error2_sigma.jpg" width="400" height="400">
@@ -56,12 +58,12 @@ We run three types of experiments for 256-dimensional signals:
 
 ## Conclusions
 
-- We see gradual increase in reconstruction error for both **f1** and **f2** as **sigma** increases.
-- Reconstruction error is negligible/acceptable till around sparsity level **s** of about 64 (25% of n=256).  
+- We see gradual increase in RMSE for both **f1** and **f2** as **sigma** increases.
+- RMSE is negligible/acceptable till around sparsity level **s** of about 64 (25% of n=256).  
   We see a sudden rise in error crossing 1 by sparsity level **s** of 70.
-- If we zoom into the first part of the plot, we will see a very slow rise (not consistent but visible) in reconstruction error for both **f1** and **f2** with increase in sparsity level **s**.
-- We can clearly see increase in reconstruction error for **f1** as **k** increases.  
-  However, the reconstruction error for **f2** is almost consistent at around 0.00001.
+- If we zoom into the first part of the plot, we will see a very slow rise (not consistent but visible) in RMSE for both **f1** and **f2** with increase in sparsity level **s**.
+- We can clearly see increase in RMSE for **f1** as **k** increases.  
+  However, the RMSE for **f2** is almost consistent at around 0.00001.
 - A possible explanation to this is the decrease in significance of **f1** in **f**, so the error bound in OMP exits when the error value of **f2** is less as error value of **f1** becomes less significant with increase in **k**.
 - To add to that, **sigma** is based on the average value of **f1** + **f2**, which increases while the average value of **f1** remains same, thus giving similar results as the experiment when we were varying **sigma**.  
-  For **f2**, increase in **sigma** is counter-acted by the increase in average value of **f2**, thus giving us almost consistent reconstruction error.
+  For **f2**, increase in **sigma** is counter-acted by the increase in average value of **f2**, thus giving us almost consistent RMSE.
