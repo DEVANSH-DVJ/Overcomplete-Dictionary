@@ -30,3 +30,14 @@ Code for Experiments is present in form of a function in `main.m`
 
 Execute `main.m` in MATLAB to reproduce the results. You can adjust the parameters like dimension of signal and number of experiments in `main.m`.  
 The code is tested on MATLAB 2020b, but should work on other versions of MATLAB with no or little changes.
+
+## Results
+
+The signal **f** is linear combination of **f1** : a **s**-sparse signal in DCT basis, **f2** : a **s**-sparse signal (in Identity basis), and Gaussian Noise with standard deviation **sigma**.  
+The magnitude of sparse coefficients of **f2** is **k** times that of **f1**.
+
+We run three types of experiments for 256-dimensional signals:
+
+1. Varying **sigma** from 0.001\*avg(**f**) to 0.1\*avg(**f**) with **s** fixed as 25 and **k** fixed as 1.
+2. Varying **s** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **k** fixed as 1.
+3. Varying **k** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **s** fixed as 25.
