@@ -12,6 +12,7 @@ dctmat = dctmtx(n);
 A = [dctmat eye(n)];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Varying sigma %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic;
 
 sigmas = zeros(100,1);
 error1 = zeros(100,1);
@@ -61,9 +62,11 @@ ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
 saveas(gcf, "plots/error2_sigma.jpg");
 
+toc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%% Varying sparsity level %%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic;
 
 ss = zeros(100,1);
 error1 = zeros(100,1);
@@ -113,9 +116,11 @@ ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
 title("Varying sparsity level keeping \sigma=0.01*mean(f_1+f_2)");
 saveas(gcf, "plots/error2_sparsity.jpg");
 
+toc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%% Varying magnitude ratio %%%%%%%%%%%%%%%%%%%%%%%%%%%
+tic;
 
 ss = zeros(100,1);
 error1 = zeros(100,1);
@@ -165,4 +170,5 @@ ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
 saveas(gcf, "plots/error2_k.jpg");
 
+toc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
