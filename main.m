@@ -69,6 +69,8 @@ plot(sigmas, error1, 'b');
 xlabel("\sigma");
 ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error1_sigma.jpg");
 
 % Error plot for f_2 wrt sigma
@@ -77,6 +79,8 @@ plot(sigmas, error2, 'r');
 xlabel("\sigma");
 ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error2_sigma.jpg");
 
 toc;
@@ -133,6 +137,8 @@ plot(ss, error1, 'b');
 xlabel("sparsity level");
 ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
 title("Varying sparsity level keeping \sigma=0.01*avg(f)");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error1_sparsity.jpg");
 
 % Error plot for f_2 wrt sparsity
@@ -141,6 +147,8 @@ plot(ss, error2, 'r');
 xlabel("sparsity level");
 ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
 title("Varying sparsity level keeping \sigma=0.01*avg(f)");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error2_sparsity.jpg");
 
 toc;
@@ -197,6 +205,8 @@ plot(ss, error1, 'b');
 xlabel("k");
 ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error1_k.jpg");
 
 % Error plot for f_2 wrt magnitude ratio
@@ -205,6 +215,8 @@ plot(ss, error2, 'r');
 xlabel("k");
 ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
+ax = gca;
+ax.YRuler.Exponent = 0;
 saveas(gcf, "plots/error2_k.jpg");
 
 toc;
