@@ -42,17 +42,17 @@ We run three types of experiments for 256-dimensional signals:
 2. Varying **s** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **k** fixed as 1.
 3. Varying **k** from 1 to 100 with **sigma** fixed as 0.01\*avg(**f**) and **s** fixed as 25.
 
-### Varying **sigma**
+### Varying sigma
 
-<img src="plots/error1_sigma.jpg" width="400" height="400">
-<img src="plots/error2_sigma.jpg" width="400" height="400">
+<img src="plots/error1_sigma.jpg" width="350" height="350">
+<img src="plots/error2_sigma.jpg" width="350" height="350">
 
-### Varying **sparsity**
+### Varying sparsity
 
-<img src="plots/error1_sparsity.jpg" width="400" height="400">
-<img src="plots/error2_sparsity.jpg" width="400" height="400">
+<img src="plots/error1_sparsity.jpg" width="350" height="350">
+<img src="plots/error2_sparsity.jpg" width="350" height="350">
 
-### Varying **k**
+### Varying k
 
-<img src="plots/error1_k.jpg" width="400" height="400">
-<img src="plots/error2_k.jpg" width="400" height="400">
+<img src="plots/error1_k.jpg" width="350" height="350">
+<img src="plots/error2_k.jpg" width="350" height="350">
