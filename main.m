@@ -6,7 +6,9 @@ close all;
 rng(0);
 
 %% Constants
+% Dimension of signal
 n = 256;
+% Number of experiments
 nexp = 100;
 
 %% Initialize Overcomplete Dictionary
