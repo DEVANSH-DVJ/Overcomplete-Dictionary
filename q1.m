@@ -4,10 +4,12 @@ close all;
 
 rng(0);
 
+n = 256;
+
 % DCT matrix
-dctmat = dctmtx(256);
+dctmat = dctmtx(n);
 % Over-complete dictionary for cosine + spikes
-A = [dctmat eye(256)];
+A = [dctmat eye(n)];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Varying sigma %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -16,11 +18,11 @@ error1 = zeros(100,1);
 error2 = zeros(100,1);
 
 s = 25;
-ind1 = randi(256, s, 1);
-coeff1 = zeros(256,1);
+ind1 = randi(n, s, 1);
+coeff1 = zeros(n,1);
 coeff1(ind1) = rand(s,1)*100;
-ind2 = randi(256, s, 1);
-coeff2 = zeros(256,1);
+ind2 = randi(n, s, 1);
+coeff2 = zeros(n,1);
 coeff2(ind2) = rand(s,1)*100;
 
 f1 = dctmat*coeff1;
@@ -29,11 +31,11 @@ f = f1 + f2;
 
 for i=1:100
     sigma = 0.001 * i * abs(mean(f));
-    f = f + randn(256,1)*sigma;
+    f = f + randn(n,1)*sigma;
 
-    x = omp(A, f, 9*256*sigma^2);
-    coeff1_recon = x(1:256);
-    coeff2_recon = x(257:512);
+    x = omp(A, f, 9*n*sigma^2);
+    coeff1_recon = x(1:n);
+    coeff2_recon = x(n+1:2*n);
 
     f1_recon = dctmat*coeff1_recon;
     f2_recon = coeff2_recon;
@@ -69,11 +71,11 @@ error2 = zeros(100,1);
 
 for i=1:100
     s = i;
-    ind1 = randi(256, s, 1);
-    coeff1 = zeros(256,1);
+    ind1 = randi(n, s, 1);
+    coeff1 = zeros(n,1);
     coeff1(ind1) = rand(s,1)*100;
-    ind2 = randi(256, s, 1);
-    coeff2 = zeros(256,1);
+    ind2 = randi(n, s, 1);
+    coeff2 = zeros(n,1);
     coeff2(ind2) = rand(s,1)*100;
 
     f1 = dctmat*coeff1;
@@ -81,11 +83,11 @@ for i=1:100
     f = f1 + f2;
 
     sigma = 0.01 * abs(mean(f));
-    f = f + randn(256,1)*sigma;
+    f = f + randn(n,1)*sigma;
 
-    x = omp(A, f, 9*256*sigma^2);
-    coeff1_recon = x(1:256);
-    coeff2_recon = x(257:512);
+    x = omp(A, f, 9*n*sigma^2);
+    coeff1_recon = x(1:n);
+    coeff2_recon = x(n+1:2*n);
 
     f1_recon = dctmat*coeff1_recon;
     f2_recon = coeff2_recon;
@@ -121,11 +123,11 @@ error2 = zeros(100,1);
 
 for k=1:100
     s = 25;
-    ind1 = randi(256, s, 1);
-    coeff1 = zeros(256,1);
+    ind1 = randi(n, s, 1);
+    coeff1 = zeros(n,1);
     coeff1(ind1) = rand(s,1)*100;
-    ind2 = randi(256, s, 1);
-    coeff2 = zeros(256,1);
+    ind2 = randi(n, s, 1);
+    coeff2 = zeros(n,1);
     coeff2(ind2) = rand(s,1)*100*k;
 
     f1 = dctmat*coeff1;
@@ -133,11 +135,11 @@ for k=1:100
     f = f1 + f2;
 
     sigma = 0.01 * abs(mean(f));
-    f = f + randn(256,1)*sigma;
+    f = f + randn(n,1)*sigma;
 
-    x = omp(A, f, 9*256*sigma^2);
-    coeff1_recon = x(1:256);
-    coeff2_recon = x(257:512);
+    x = omp(A, f, 9*n*sigma^2);
+    coeff1_recon = x(1:n);
+    coeff2_recon = x(n+1:2*n);
 
     f1_recon = dctmat*coeff1_recon;
     f2_recon = coeff2_recon;
