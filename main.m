@@ -63,7 +63,7 @@ for i=1:nexp
     error2(i) = norm(f2_recon - f2) / norm(f2);
 end
 
-% Error plot for f_1
+% Error plot for f_1 wrt sigma
 figure;
 plot(sigmas, error1, 'b');
 xlabel("\sigma");
@@ -71,7 +71,7 @@ ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
 saveas(gcf, "plots/error1_sigma.jpg");
 
-% Error plot for f_2
+% Error plot for f_2 wrt sigma
 figure;
 plot(sigmas, error2, 'r');
 xlabel("\sigma");
@@ -127,7 +127,7 @@ for i=1:nexp
     error2(i) = norm(f2_recon - f2) / norm(f2);
 end
 
-% Error plot for f_1
+% Error plot for f_1 wrt sparsity
 figure
 plot(ss, error1, 'b');
 xlabel("sparsity level");
@@ -135,7 +135,7 @@ ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
 title("Varying sparsity level keeping \sigma=0.01*mean(f_1+f_2)");
 saveas(gcf, "plots/error1_sparsity.jpg");
 
-% Error plot for f_2
+% Error plot for f_2 wrt sparsity
 figure
 plot(ss, error2, 'r');
 xlabel("sparsity level");
@@ -144,7 +144,6 @@ title("Varying sparsity level keeping \sigma=0.01*mean(f_1+f_2)");
 saveas(gcf, "plots/error2_sparsity.jpg");
 
 toc;
-
 
 %% Varying magnitude ratio
 tic;
@@ -192,7 +191,7 @@ for k=1:nexp
     error2(k) = norm(f2_recon - f2) / norm(f2);
 end
 
-% Error plot for f_1
+% Error plot for f_1 wrt magnitude ratio
 figure
 plot(ss, error1, 'b');
 xlabel("k");
@@ -200,7 +199,7 @@ ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
 saveas(gcf, "plots/error1_k.jpg");
 
-% Error plot for f_2
+% Error plot for f_2 wrt magnitude ratio
 figure
 plot(ss, error2, 'r');
 xlabel("k");
