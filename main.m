@@ -67,7 +67,7 @@ end
 figure;
 plot(sigmas, error1, 'b');
 xlabel("\sigma");
-ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
 saveas(gcf, "plots/error1_sigma.jpg");
 
@@ -75,7 +75,7 @@ saveas(gcf, "plots/error1_sigma.jpg");
 figure;
 plot(sigmas, error2, 'r');
 xlabel("\sigma");
-ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
 saveas(gcf, "plots/error2_sigma.jpg");
 
@@ -131,16 +131,16 @@ end
 figure
 plot(ss, error1, 'b');
 xlabel("sparsity level");
-ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
-title("Varying sparsity level keeping \sigma=0.01*mean(f_1+f_2)");
+ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
+title("Varying sparsity level keeping \sigma=0.01*avg(f)");
 saveas(gcf, "plots/error1_sparsity.jpg");
 
 % Error plot for f_2 wrt sparsity
 figure
 plot(ss, error2, 'r');
 xlabel("sparsity level");
-ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
-title("Varying sparsity level keeping \sigma=0.01*mean(f_1+f_2)");
+ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
+title("Varying sparsity level keeping \sigma=0.01*avg(f)");
 saveas(gcf, "plots/error2_sparsity.jpg");
 
 toc;
@@ -195,7 +195,7 @@ end
 figure
 plot(ss, error1, 'b');
 xlabel("k");
-ylabel("$$||\hat{f_1} - f1||/||f1||$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
 saveas(gcf, "plots/error1_k.jpg");
 
@@ -203,7 +203,7 @@ saveas(gcf, "plots/error1_k.jpg");
 figure
 plot(ss, error2, 'r');
 xlabel("k");
-ylabel("$$||\hat{f_2} - f_2||/||f_2||$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_2} - f_2||_2^2/||f_2||_2^2$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
 saveas(gcf, "plots/error2_k.jpg");
 
