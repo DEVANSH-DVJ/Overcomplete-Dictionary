@@ -22,3 +22,11 @@ If we create a basis (**A**) as a union of DCT and Identity, then the signal can
 Finding sparsest representation of signal in basis **A** is a NP-hard problem, so we use approximation algorithm - Orthogonal Matching Pursuit (OMP) to get the representation.
 
 We use the sparsity constraint to remove noise added to the signal.
+
+## Code
+
+Code for OMP is present in form of a function in `omp.m`  
+Code for Experiments is present in form of a function in `main.m`
+
+Execute `main.m` in MATLAB to reproduce the results. You can adjust the parameters like dimension of signal and number of experiments in `main.m`.  
+The code is tested on MATLAB 2020b, but should work on other versions of MATLAB with no or little changes.
