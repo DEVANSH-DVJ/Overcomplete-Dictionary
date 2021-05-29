@@ -67,7 +67,7 @@ end
 figure;
 plot(sigmas, error1, 'b');
 xlabel("\sigma");
-ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_1} - f_1||_2^2/||f_1||_2^2$$", 'interpreter', 'latex');
 title("Varying \sigma keeping sparsity level as 25");
 ax = gca;
 ax.YRuler.Exponent = 0;
@@ -135,7 +135,7 @@ end
 figure
 plot(ss, error1, 'b');
 xlabel("sparsity level");
-ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_1} - f_1||_2^2/||f_1||_2^2$$", 'interpreter', 'latex');
 title("Varying sparsity level keeping \sigma=0.01*avg(f)");
 ax = gca;
 ax.YRuler.Exponent = 0;
@@ -203,7 +203,7 @@ end
 figure
 plot(ss, error1, 'b');
 xlabel("k");
-ylabel("$$||\hat{f_1} - f1||_2^2/||f1||_2^2$$", 'interpreter', 'latex');
+ylabel("$$||\hat{f_1} - f_1||_2^2/||f_1||_2^2$$", 'interpreter', 'latex');
 title("Varying magnitude of f_2 w.r.t f_1 (ratio = k)");
 ax = gca;
 ax.YRuler.Exponent = 0;
