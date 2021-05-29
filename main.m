@@ -59,8 +59,8 @@ for i=1:nexp
 
     % Save experiment's result
     sigmas(i) = 0.001*i;
-    error1(i) = norm(f1_recon - f1) / norm(f1);
-    error2(i) = norm(f2_recon - f2) / norm(f2);
+    error1(i) = norm(f1_recon - f1)^2 / norm(f1)^2;
+    error2(i) = norm(f2_recon - f2)^2 / norm(f2)^2;
 end
 
 % Error plot for f_1 wrt sigma
@@ -123,8 +123,8 @@ for i=1:nexp
 
     % Save experiment's result
     ss(i) = s;
-    error1(i) = norm(f1_recon - f1) / norm(f1);
-    error2(i) = norm(f2_recon - f2) / norm(f2);
+    error1(i) = norm(f1_recon - f1)^2 / norm(f1)^2;
+    error2(i) = norm(f2_recon - f2)^2 / norm(f2)^2;
 end
 
 % Error plot for f_1 wrt sparsity
@@ -187,8 +187,8 @@ for k=1:nexp
 
     % Save experiment's result
     ss(k) = k;
-    error1(k) = norm(f1_recon - f1) / norm(f1);
-    error2(k) = norm(f2_recon - f2) / norm(f2);
+    error1(k) = norm(f1_recon - f1)^2 / norm(f1)^2;
+    error2(k) = norm(f2_recon - f2)^2 / norm(f2)^2;
 end
 
 % Error plot for f_1 wrt magnitude ratio
