@@ -44,15 +44,12 @@ We run three types of experiments for 256-dimensional signals:
 
 ### Varying sigma
 
-<img src="plots/error1_sigma.jpg" width="350" height="350">
-<img src="plots/error2_sigma.jpg" width="350" height="350">
+<img src="plots/error1_sigma.jpg" width="400" height="400"> <img src="plots/error2_sigma.jpg" width="400" height="400">
 
 ### Varying sparsity
 
-<img src="plots/error1_sparsity.jpg" width="350" height="350">
-<img src="plots/error2_sparsity.jpg" width="350" height="350">
+<img src="plots/error1_sparsity.jpg" width="400" height="400"> <img src="plots/error2_sparsity.jpg" width="400" height="400">
 
 ### Varying k
 
-<img src="plots/error1_k.jpg" width="350" height="350">
-<img src="plots/error2_k.jpg" width="350" height="350">
+<img src="plots/error1_k.jpg" width="400" height="400"> <img src="plots/error2_k.jpg" width="400" height="400">
