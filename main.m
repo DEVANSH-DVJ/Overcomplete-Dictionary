@@ -7,6 +7,7 @@ rng(0);
 
 %% Constants
 n = 256;
+nexp = 100;
 
 %% Initialize Overcomplete Dictionary
 % DCT matrix
@@ -18,9 +19,9 @@ A = [dctmat eye(n)];
 tic;
 
 % Initialize experiment results
-sigmas = zeros(100, 1);
-error1 = zeros(100, 1);
-error2 = zeros(100, 1);
+sigmas = zeros(nexp, 1);
+error1 = zeros(nexp, 1);
+error2 = zeros(nexp, 1);
 
 % Fixed sparsity
 s = 25;
@@ -39,7 +40,7 @@ f2 = coeff2;
 f = f1 + f2;
 
 % For each experiment
-for i=1:100
+for i=1:nexp
     % Set standard deviation of Gaussian Noise
     sigma = 0.001*i * abs(mean(f));
     % Add Gaussian Noise
@@ -82,12 +83,12 @@ toc;
 tic;
 
 % Initialize experiment results
-ss = zeros(100, 1);
-error1 = zeros(100, 1);
-error2 = zeros(100, 1);
+ss = zeros(nexp, 1);
+error1 = zeros(nexp, 1);
+error2 = zeros(nexp, 1);
 
 % For each experiment
-for i=1:100
+for i=1:nexp
     % Set sparsity
     s = i;
 
@@ -147,12 +148,12 @@ toc;
 tic;
 
 % Initialize experiment results
-ss = zeros(100, 1);
-error1 = zeros(100, 1);
-error2 = zeros(100, 1);
+ss = zeros(nexp, 1);
+error1 = zeros(nexp, 1);
+error2 = zeros(nexp, 1);
 
 % For each experiment
-for k=1:100
+for k=1:nexp
     % Set sparsity
     s = 25;
 
