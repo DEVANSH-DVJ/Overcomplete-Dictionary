@@ -18,46 +18,46 @@ A = [dctmat eye(n)];
 tic;
 
 % Initialize experiment results
-sigmas = zeros(100,1);
-error1 = zeros(100,1);
-error2 = zeros(100,1);
+sigmas = zeros(100, 1);
+error1 = zeros(100, 1);
+error2 = zeros(100, 1);
 
 % Fixed sparsity
 s = 25;
 
 % Get the sparse code
 ind1 = randi(n, s, 1);
-coeff1 = zeros(n,1);
-coeff1(ind1) = rand(s,1)*100;
+coeff1 = zeros(n, 1);
+coeff1(ind1) = rand(s, 1)*100;
 ind2 = randi(n, s, 1);
-coeff2 = zeros(n,1);
-coeff2(ind2) = rand(s,1)*100;
+coeff2 = zeros(n, 1);
+coeff2(ind2) = rand(s, 1)*100;
 
 % Generate the signal
-f1 = dctmat*coeff1;
+f1 = dctmat * coeff1;
 f2 = coeff2;
 f = f1 + f2;
 
 % For each experiment
 for i=1:100
     % Set standard deviation of Gaussian Noise
-    sigma = 0.001 * i * abs(mean(f));
+    sigma = 0.001*i * abs(mean(f));
     % Add Gaussian Noise
-    f = f + randn(n,1)*sigma;
+    f = f + randn(n, 1)*sigma;
 
     % Perform Orthogonal Matching Pursuit to obtain the coefficients
     x = omp(A, f, 9*n*sigma^2);
-    coeff1_recon = x(1:n);
-    coeff2_recon = x(n+1:2*n);
+    coeff1_recon = x(1 : n);
+    coeff2_recon = x(n+1 : 2*n);
 
     % Reconstruct signals using coefficients
     f1_recon = dctmat*coeff1_recon;
     f2_recon = coeff2_recon;
 
     % Save experiment's result
-    sigmas(i) = 0.001 * i;
-    error1(i) = norm(f1_recon - f1)/norm(f1);
-    error2(i) = norm(f2_recon - f2)/norm(f2);
+    sigmas(i) = 0.001*i;
+    error1(i) = norm(f1_recon - f1) / norm(f1);
+    error2(i) = norm(f2_recon - f2) / norm(f2);
 end
 
 % Error plot for f_1
@@ -82,9 +82,9 @@ toc;
 tic;
 
 % Initialize experiment results
-ss = zeros(100,1);
-error1 = zeros(100,1);
-error2 = zeros(100,1);
+ss = zeros(100, 1);
+error1 = zeros(100, 1);
+error2 = zeros(100, 1);
 
 % For each experiment
 for i=1:100
@@ -93,26 +93,26 @@ for i=1:100
 
     % Get the sparse code
     ind1 = randi(n, s, 1);
-    coeff1 = zeros(n,1);
-    coeff1(ind1) = rand(s,1)*100;
+    coeff1 = zeros(n, 1);
+    coeff1(ind1) = rand(s, 1)*100;
     ind2 = randi(n, s, 1);
-    coeff2 = zeros(n,1);
-    coeff2(ind2) = rand(s,1)*100;
+    coeff2 = zeros(n, 1);
+    coeff2(ind2) = rand(s, 1)*100;
 
     % Generate the signal
-    f1 = dctmat*coeff1;
+    f1 = dctmat * coeff1;
     f2 = coeff2;
     f = f1 + f2;
 
     % Set standard deviation of Gaussian Noise
     sigma = 0.01 * abs(mean(f));
     % Add Gaussian Noise
-    f = f + randn(n,1)*sigma;
+    f = f + randn(n, 1)*sigma;
 
     % Perform Orthogonal Matching Pursuit to obtain the coefficients
     x = omp(A, f, 9*n*sigma^2);
-    coeff1_recon = x(1:n);
-    coeff2_recon = x(n+1:2*n);
+    coeff1_recon = x(1 : n);
+    coeff2_recon = x(n+1 : 2*n);
 
     % Reconstruct signals using coefficients
     f1_recon = dctmat*coeff1_recon;
@@ -120,8 +120,8 @@ for i=1:100
 
     % Save experiment's result
     ss(i) = s;
-    error1(i) = norm(f1_recon - f1)/norm(f1);
-    error2(i) = norm(f2_recon - f2)/norm(f2);
+    error1(i) = norm(f1_recon - f1) / norm(f1);
+    error2(i) = norm(f2_recon - f2) / norm(f2);
 end
 
 % Error plot for f_1
@@ -147,9 +147,9 @@ toc;
 tic;
 
 % Initialize experiment results
-ss = zeros(100,1);
-error1 = zeros(100,1);
-error2 = zeros(100,1);
+ss = zeros(100, 1);
+error1 = zeros(100, 1);
+error2 = zeros(100, 1);
 
 % For each experiment
 for k=1:100
@@ -158,26 +158,26 @@ for k=1:100
 
     % Get the sparse code
     ind1 = randi(n, s, 1);
-    coeff1 = zeros(n,1);
-    coeff1(ind1) = rand(s,1)*100;
+    coeff1 = zeros(n, 1);
+    coeff1(ind1) = rand(s, 1)*100;
     ind2 = randi(n, s, 1);
-    coeff2 = zeros(n,1);
-    coeff2(ind2) = rand(s,1)*100*k;
+    coeff2 = zeros(n, 1);
+    coeff2(ind2) = rand(s, 1)*100*k;
 
     % Generate the signal
-    f1 = dctmat*coeff1;
+    f1 = dctmat * coeff1;
     f2 = coeff2;
     f = f1 + f2;
 
     % Set standard deviation of Gaussian Noise
     sigma = 0.01 * abs(mean(f));
     % Add Gaussian Noise
-    f = f + randn(n,1)*sigma;
+    f = f + randn(n, 1)*sigma;
 
     % Perform Orthogonal Matching Pursuit to obtain the coefficients
     x = omp(A, f, 9*n*sigma^2);
-    coeff1_recon = x(1:n);
-    coeff2_recon = x(n+1:2*n);
+    coeff1_recon = x(1 : n);
+    coeff2_recon = x(n+1 : 2*n);
 
     % Reconstruct signals using coefficients
     f1_recon = dctmat*coeff1_recon;
@@ -185,8 +185,8 @@ for k=1:100
 
     % Save experiment's result
     ss(k) = k;
-    error1(k) = norm(f1_recon - f1)/norm(f1);
-    error2(k) = norm(f2_recon - f2)/norm(f2);
+    error1(k) = norm(f1_recon - f1) / norm(f1);
+    error2(k) = norm(f2_recon - f2) / norm(f2);
 end
 
 % Error plot for f_1
