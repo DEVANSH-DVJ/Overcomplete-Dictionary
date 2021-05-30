@@ -67,3 +67,7 @@ We evaluated the reconstructed signal by computing RMSE (Relative Mean Square Er
 - A possible explanation to this is the decrease in significance of **f1** in **f**, so the error bound in OMP exits when the error value of **f2** is less as error value of **f1** becomes less significant with increase in **k**.
 - To add to that, **sigma** is based on the average value of **f1** + **f2**, which increases while the average value of **f1** remains same, thus giving similar results as the experiment when we were varying **sigma**.  
   For **f2**, increase in **sigma** is counter-acted by the increase in average value of **f2**, thus giving us almost consistent RMSE.
+
+---
+
+*(This project was a part of [Assignment 4](https://github.com/devansh-dvj/CS754-Assignment-4) for [CS 754: Advanced Image Processing, Spring 2021](https://www.cse.iitb.ac.in/~ajitvr/CS754_Spring2021/), [IIT Bombay](https://www.iitb.ac.in/).)*
